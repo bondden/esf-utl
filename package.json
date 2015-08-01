@@ -1,0 +1,39 @@
+{
+  "name": "@bond007/package",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bondden@bitbucket.org/bondden/package.git"
+  },
+  "keywords": [
+    "esf"
+  ],
+  "author": "Denis Bondarenko <bond.den@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/bondden/package#readme",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "babel": "^5.8.19",
+    "chai": "^3.0.0",
+    "cli-color": "^1.0.0",
+    "es6-module-loader": "^0.16.6",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.1.0",
+    "gulp-changed": "^1.2.1",
+    "gulp-mocha": "^2.0.1",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-util": "^3.0.6",
+    "istanbul": "^0.3.17",
+    "jscs": "^1.13.1",
+    "mocha": "^2.2.5",
+    "mocha-lcov-reporter": "0.0.2"
+  }
+}
