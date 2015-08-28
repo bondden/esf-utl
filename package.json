@@ -1,10 +1,10 @@
 {
   "name": "@bond007/esf-utl",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "test/main.js"
+    "test": "tst/main.js"
   },
   "repository": {
     "type": "git",
@@ -37,5 +37,15 @@
     "jscs": "^1.13.1",
     "mocha": "^2.2.5",
     "mocha-lcov-reporter": "0.0.2"
-  }
+  },
+  "files": [
+    "index.js",
+    "gulpfile.js",
+    ".jscsrc",
+    ".editorconfig",
+    ".gitattributes",
+    "lib",
+    "src",
+    "tst"
+  ]
 }
