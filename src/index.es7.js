@@ -6,14 +6,40 @@
 var clc=require('cli-color');
 var fs=require('fs');
 
-export class Util{
+export class Utl{
 
 	static styles={
 		'ne':clc.white,
 		'er':clc.red,
 		'ok':clc.green,
 		'em':clc.yellow,
-		'erb':clc.redBright
+		'erb':clc.redBright,
+		'sh':clc.whiteBright
+	};
+
+	/**
+	 * FFS = for file system
+	 * @return string: current Date-Time formatted like 0000-00-00_00-00-00
+	 */
+	static getCurrentDateFmtFFS(){
+		//add zero
+		function aZ(v){
+			return (v<10)?`0${v}`:v;
+		}
+
+		let d=new Date();
+		return d.getFullYear+'-'+aZ(d.getMonth()+1)+'-'+aZ(d.getDate())+'_'+aZ(d.getHours())+'-'+aZ(d.getMinutes())+'-'+aZ(d.getSeconds());
+	}
+
+	static stripSlash=function(pathName){
+		return pathName.replace(/\/+$/,'');
+	};
+
+	static absolutizePath(p,rel=''){
+		if(!path.isAbsolute(p)){
+			p=path.resolve(__dirname+rel+p).replace(/\\/ig,'/');
+		}
+		return p;
 	};
 
 	static logFilter = function(s){
@@ -41,19 +67,10 @@ export class Util{
 	static log = function(msg='\n',style='ne',silent=false){
 
 		//todo: transfer settings to log for a) defining a log file, b) setting logging on/off
-		//if(!settings.log)return;
+		//if(!settings.log)return; //
 
-		var
-			styles={
-				'ne':clc.white,
-				'er':clc.redBright,
-				'ok':clc.green,
-				'em':clc.yellow,
-				'mb':clc.magentaBright,
-				'sh':clc.whiteBright
-			},
-			apx  =false
-		;
+		var H=this;
+		var apx  =false;
 
 		//set console style style
 		if(msg instanceof Error){
@@ -69,7 +86,7 @@ export class Util{
 			}
 		}
 
-		msg=Util.logFilter(msg);
+		msg=Utl.logFilter(msg);
 
 		var d=new Date();
 
@@ -82,7 +99,7 @@ export class Util{
 		);
 
 		if(!silent){
-			console.log(styles[style]('\nuto.log: '+msg));
+			console.log(H.styles[style]('\nuto.log: '+msg));
 		}
 
 	};

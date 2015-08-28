@@ -1,5 +1,5 @@
 {
-  "name": "@bond007/package",
+  "name": "@bond007/esf-utl",
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
@@ -8,14 +8,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://bondden@bitbucket.org/bondden/package.git"
+    "url": "https://bondden@bitbucket.org/bondden/esf-utl.git"
   },
   "keywords": [
-    "esf"
+    "esf",
+    "utl",
+    "util"
   ],
   "author": "Denis Bondarenko <bond.den@gmail.com>",
   "license": "MIT",
-  "homepage": "https://bitbucket.org/bondden/package#readme",
+  "homepage": "https://bitbucket.org/bondden/esf-utl#readme",
   "dependencies": {
   },
   "devDependencies": {
