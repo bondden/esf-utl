@@ -2,11 +2,11 @@
 
 ## Road map
 
-| Version   | Functionality     		        											| Status	|
-|---        |---     			                   											|			|
-| 0.1.0     | Logging (req: [esf-util-1.1](esf-util-1.1), [esf-util-1.4](esf-util-1.4), [esf-util-1.5](esf-util-1.5))|
-| 0.2.0     | Basic path operathins (req. [esf-util-1.3](esf-util-1.3))						|			|
-| 1.0.0     | Promises error handling [esf-util-1.2](esf-util-1.2)		     				|			|
+| Version   | Functionality                                                                                           | Status  |
+|---        |---                                                                                                      |         |
+| 0.1.0     | Logging (req: [esf-util-1.1](esf-util-1.1), [esf-util-1.4](esf-util-1.4), [esf-util-1.5](esf-util-1.5)) |         |
+| 0.2.0     | Basic path operathins (req. [esf-util-1.3](esf-util-1.3))                                               |         |
+| 1.0.0     | Promises error handling [esf-util-1.2](esf-util-1.2)                                                    |         |
 
 ## Requirements
 
