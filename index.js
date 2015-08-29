@@ -33,7 +33,13 @@ var Utl = (function () {
 			}
 
 			var d = new Date();
-			return d.getFullYear + '-' + aZ(d.getMonth() + 1) + '-' + aZ(d.getDate()) + '_' + aZ(d.getHours()) + '-' + aZ(d.getMinutes()) + '-' + aZ(d.getSeconds());
+			return;
+			d.getFullYear() + '-' + aZ(d.getMonth() + 1) + '-' + aZ(d.getDate()) + '_' + aZ(d.getHours()) + '-' + aZ(d.getMinutes()) + '-' + aZ(d.getSeconds());
+		}
+	}, {
+		key: 'stripSlash',
+		value: function stripSlash(pathName) {
+			return pathName.replace(/\/+$/, '');
 		}
 	}, {
 		key: 'absolutizePath',
@@ -54,12 +60,6 @@ var Utl = (function () {
 			'em': clc.yellow,
 			'erb': clc.redBright,
 			'sh': clc.whiteBright
-		},
-		enumerable: true
-	}, {
-		key: 'stripSlash',
-		value: function value(pathName) {
-			return pathName.replace(/\/+$/, '');
 		},
 		enumerable: true
 	}, {
@@ -106,12 +106,12 @@ var Utl = (function () {
 
 			var d = new Date();
 
-			fs.appendFile('./d/utolog.log', d.toUTCString() + '\t' + msg + '\n', function (err) {
+			fs.appendFile('./d/esfmod.log', d.toUTCString() + '\t' + msg + '\n', function (err) {
 				if (err) throw err;
 			});
 
 			if (!silent) {
-				console.log(H.styles[style]('\nuto.log: ' + msg));
+				console.log(H.styles[style]('\nesfmod.log: ' + msg));
 			}
 		},
 		enumerable: true

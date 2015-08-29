@@ -28,10 +28,13 @@ export class Utl{
 		}
 
 		let d=new Date();
-		return d.getFullYear+'-'+aZ(d.getMonth()+1)+'-'+aZ(d.getDate())+'_'+aZ(d.getHours())+'-'+aZ(d.getMinutes())+'-'+aZ(d.getSeconds());
-	}
+		return 
+			d.getFullYear()+'-'+aZ(d.getMonth()+1)+'-'+aZ(d.getDate())+'_'
+			+aZ(d.getHours())+'-'+aZ(d.getMinutes())+'-'+aZ(d.getSeconds())
+		;
+	};
 
-	static stripSlash=function(pathName){
+	static stripSlash(pathName){
 		return pathName.replace(/\/+$/,'');
 	};
 
@@ -91,7 +94,7 @@ export class Utl{
 		var d=new Date();
 
 		fs.appendFile(
-			'./d/utolog.log',
+			'./d/esfmod.log',
 			d.toUTCString()+'\t'+msg+'\n',
 			function(err){
 				if(err) throw err;
@@ -99,7 +102,7 @@ export class Utl{
 		);
 
 		if(!silent){
-			console.log(H.styles[style]('\nuto.log: '+msg));
+			console.log(H.styles[style]('\nesfmod.log: '+msg));
 		}
 
 	};
