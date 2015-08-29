@@ -44,8 +44,7 @@ var Utl = (function () {
 			}
 
 			var d = new Date();
-			return;
-			d.getFullYear() + '-' + aZ(d.getMonth() + 1) + '-' + aZ(d.getDate()) + '_' + aZ(d.getHours()) + '-' + aZ(d.getMinutes()) + '-' + aZ(d.getSeconds());
+			return d.getFullYear() + '-' + aZ(d.getMonth() + 1) + '-' + aZ(d.getDate()) + '_' + aZ(d.getHours()) + '-' + aZ(d.getMinutes()) + '-' + aZ(d.getSeconds());
 		},
 		enumerable: true
 	}, {
