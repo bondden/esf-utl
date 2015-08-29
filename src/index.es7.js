@@ -3,8 +3,11 @@
  */
 
 'use strict';
-var clc=require('cli-color');
-var fs=require('fs');
+var 
+	clc=require('cli-color'),
+	fs=require('fs'),
+	os=require('os')
+;
 
 export class Utl{
 
