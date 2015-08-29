@@ -13,6 +13,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var clc = require('cli-color'),
     fs = require('fs'),
+    path = require('path'),
     os = require('os');
 
 var Utl = (function () {

@@ -6,6 +6,7 @@
 var 
 	clc=require('cli-color'),
 	fs=require('fs'),
+	path=require('path'),
 	os=require('os')
 ;
 
