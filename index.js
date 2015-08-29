@@ -89,7 +89,6 @@ var Utl = (function () {
 			//todo: transfer settings to log for a) defining a log file, b) setting logging on/off
 			//if(!settings.log)return; //
 
-			var H = this;
 			var apx = false;
 
 			//set console style style
@@ -115,7 +114,7 @@ var Utl = (function () {
 			});
 
 			if (!silent) {
-				console.log(H.styles[style]('\nesfmod.log: ' + msg));
+				console.log(Utl.styles[style]('\nesfmod.log: ' + msg));
 			}
 		},
 		enumerable: true
