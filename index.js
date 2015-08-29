@@ -11,8 +11,9 @@ var _createClass = (function () { function defineProperties(target, props) { for
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-var clc = require('cli-color');
-var fs = require('fs');
+var clc = require('cli-color'),
+    fs = require('fs'),
+    os = require('os');
 
 var Utl = (function () {
 	function Utl() {
@@ -108,7 +109,7 @@ var Utl = (function () {
 
 			var d = new Date();
 
-			fs.appendFile('./d/esfmod.log', d.toUTCString() + '\t' + msg + '\n', function (err) {
+			fs.appendFile(path.resolve(os.tmpdir() + '/esfmod.log'), d.toUTCString() + '\t' + msg + '\n', function (err) {
 				if (err) throw err;
 			});
 
