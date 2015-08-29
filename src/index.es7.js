@@ -91,7 +91,7 @@ export class Utl{
 		var d=new Date();
 
 		fs.appendFile(
-			'./d/esfmod.log',
+			path.resolve(os.tmpdir()+'/esf/esfmod.log'),
 			d.toUTCString()+'\t'+msg+'\n',
 			function(err){
 				if(err) throw err;
