@@ -20,38 +20,6 @@ var Utl = (function () {
 	}
 
 	_createClass(Utl, null, [{
-		key: 'getCurrentDateFmtFFS',
-
-		/**
-   * FFS = for file system
-   * @return string: current Date-Time formatted like 0000-00-00_00-00-00
-   */
-		value: function getCurrentDateFmtFFS() {
-			//add zero
-			function aZ(v) {
-				return v < 10 ? '0' + v : v;
-			}
-
-			var d = new Date();
-			return;
-			d.getFullYear() + '-' + aZ(d.getMonth() + 1) + '-' + aZ(d.getDate()) + '_' + aZ(d.getHours()) + '-' + aZ(d.getMinutes()) + '-' + aZ(d.getSeconds());
-		}
-	}, {
-		key: 'stripSlash',
-		value: function stripSlash(pathName) {
-			return pathName.replace(/\/+$/, '');
-		}
-	}, {
-		key: 'absolutizePath',
-		value: function absolutizePath(p) {
-			var rel = arguments.length <= 1 || arguments[1] === undefined ? '' : arguments[1];
-
-			if (!path.isAbsolute(p)) {
-				p = path.resolve(__dirname + rel + p).replace(/\\/ig, '/');
-			}
-			return p;
-		}
-	}, {
 		key: 'styles',
 		value: {
 			'ne': clc.white,
@@ -60,6 +28,41 @@ var Utl = (function () {
 			'em': clc.yellow,
 			'erb': clc.redBright,
 			'sh': clc.whiteBright
+		},
+
+		/**
+   * FFS = for file system
+   * @return string: current Date-Time formatted like 0000-00-00_00-00-00
+   */
+		enumerable: true
+	}, {
+		key: 'getCurrentDateFmtFFS',
+		value: function value() {
+			//add zero
+			function aZ(v) {
+				return v < 10 ? '0' + v : v;
+			}
+
+			var d = new Date();
+			return;
+			d.getFullYear() + '-' + aZ(d.getMonth() + 1) + '-' + aZ(d.getDate()) + '_' + aZ(d.getHours()) + '-' + aZ(d.getMinutes()) + '-' + aZ(d.getSeconds());
+		},
+		enumerable: true
+	}, {
+		key: 'stripSlash',
+		value: function value(pathName) {
+			return pathName.replace(/\/+$/, '');
+		},
+		enumerable: true
+	}, {
+		key: 'absolutizePath',
+		value: function value(p) {
+			var rel = arguments.length <= 1 || arguments[1] === undefined ? '' : arguments[1];
+
+			if (!path.isAbsolute(p)) {
+				p = path.resolve(__dirname + rel + p).replace(/\\/ig, '/');
+			}
+			return p;
 		},
 		enumerable: true
 	}, {
