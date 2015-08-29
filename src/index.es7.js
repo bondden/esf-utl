@@ -21,7 +21,7 @@ export class Utl{
 	 * FFS = for file system
 	 * @return string: current Date-Time formatted like 0000-00-00_00-00-00
 	 */
-	static getCurrentDateFmtFFS(){
+	static getCurrentDateFmtFFS = function(){
 		//add zero
 		function aZ(v){
 			return (v<10)?`0${v}`:v;
@@ -34,11 +34,11 @@ export class Utl{
 		;
 	};
 
-	static stripSlash(pathName){
+	static stripSlash = function(pathName){
 		return pathName.replace(/\/+$/,'');
 	};
 
-	static absolutizePath(p,rel=''){
+	static absolutizePath = function(p,rel=''){
 		if(!path.isAbsolute(p)){
 			p=path.resolve(__dirname+rel+p).replace(/\\/ig,'/');
 		}
