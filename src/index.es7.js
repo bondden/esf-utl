@@ -121,17 +121,20 @@ export class Utl {
 			msg='\n';
 		}
 
-		Utl.log(`Error Importer#${num}${msg}:`+(err)?JSON.stringify(err):'','er');
+		msg=`Error ${__filename} #${num}${msg}:`+(err)?JSON.stringify(err):'';
+		Utl.log(msg,'er');
 
-		if(err){
-			if(rej){
-				rej(err);
-			}
-			if(thr){
-				throw err;
-			}
+		err=new Error(msg);
+		
+		if(rej){
+			rej(err);
 		}
-
+		
+		if(thr){
+			throw err;
+		}
+		
+		return err;
 	}
 
 }
