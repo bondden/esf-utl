@@ -3,29 +3,29 @@
  */
 
 'use strict';
-var 
-	clc=require('cli-color'),
-	fs=require('fs'),
+var
+	clc =require('cli-color'),
+	fs  =require('fs'),
 	path=require('path'),
-	os=require('os')
+	os  =require('os')
 ;
 
-export class Utl{
+export class Utl {
 
 	static styles={
-		'ne':clc.white,
-		'er':clc.red,
-		'ok':clc.green,
-		'em':clc.yellow,
+		'ne': clc.white,
+		'er': clc.red,
+		'ok': clc.green,
+		'em': clc.yellow,
 		'erb':clc.redBright,
-		'sh':clc.whiteBright
+		'sh': clc.whiteBright
 	};
 
 	/**
 	 * FFS = for file system
 	 * @return string: current Date-Time formatted like 0000-00-00_00-00-00
 	 */
-	static getCurrentDateFmtFFS = function(){
+	static getCurrentDateFmtFFS=function(){
 		//add zero
 		function aZ(v){
 			return (v<10)?`0${v}`:v;
@@ -35,20 +35,20 @@ export class Utl{
 		return d.getFullYear()+'-'+aZ(d.getMonth()+1)+'-'+aZ(d.getDate())+'_'+aZ(d.getHours())+'-'+aZ(d.getMinutes())+'-'+aZ(d.getSeconds());
 	};
 
-	static stripSlash = function(pathName){
+	static stripSlash=function(pathName){
 		return pathName.replace(/\/+$/,'');
 	};
 
-	static absolutizePath = function(p,rel=''){
+	static absolutizePath=function(p,rel=''){
 		if(!path.isAbsolute(p)){
 			p=path.resolve(__dirname+rel+p).replace(/\\/ig,'/');
 		}
 		return p;
 	};
 
-	static logFilter = function(s){
+	static logFilter=function(s){
 		var
-			censorNote='FILTERED',
+			censorNote  ='FILTERED',
 			censoredKeys=[
 				'pass',
 				'password',
@@ -56,9 +56,9 @@ export class Utl{
 				'userPassword',
 				'token'
 			]
-		;
+			;
 
-		for(var i=0,l=censoredKeys.length;i<l;i++){
+		for(var i=0,l=censoredKeys.length; i<l; i++){
 			s=(s+'').replace(
 				new RegExp('"'+censoredKeys[i]+'"\s*:\s*"([^"]+)"',"ig"),
 				'"'+censoredKeys[i]+'":"'+censorNote+'"'
@@ -68,21 +68,21 @@ export class Utl{
 		return s;
 	};
 
-	static log = function(msg='\n',style='ne',silent=false){
+	static log=function(msg='\n',style='ne',silent=false){
 
 		//todo: transfer settings to log for a) defining a log file, b) setting logging on/off
 		//if(!settings.log)return; //
-		
-		var apx  =false;
+
+		var apx=false;
 
 		//set console style style
 		if(msg instanceof Error){
 			style='er';
-			apx='\n'+msg.stack;
+			apx  ='\n'+msg.stack;
 		}
 
 		//set log format
-		if(typeof msg === 'object'){
+		if(typeof msg==='object'){
 			msg=JSON.stringify(msg);
 			if(apx){
 				msg+=apx;
@@ -106,5 +106,32 @@ export class Utl{
 		}
 
 	};
+
+	static rejectingError(
+		num = 0,
+    msg = false,
+    err = false,
+    rej = false,
+    thr = false
+	){
+
+		if(!msg){
+			msg=`: ${msg}\n`;
+		}else{
+			msg='\n';
+		}
+
+		Utl.log(`Error Importer#${num}${msg}:`+(err)?JSON.stringify(err):'','er');
+
+		if(err){
+			if(rej){
+				rej(err);
+			}
+			if(thr){
+				throw err;
+			}
+		}
+
+	}
 
 }

@@ -22,6 +22,32 @@ var Utl = (function () {
 	}
 
 	_createClass(Utl, null, [{
+		key: 'rejectingError',
+		value: function rejectingError() {
+			var num = arguments.length <= 0 || arguments[0] === undefined ? 0 : arguments[0];
+			var msg = arguments.length <= 1 || arguments[1] === undefined ? false : arguments[1];
+			var err = arguments.length <= 2 || arguments[2] === undefined ? false : arguments[2];
+			var rej = arguments.length <= 3 || arguments[3] === undefined ? false : arguments[3];
+			var thr = arguments.length <= 4 || arguments[4] === undefined ? false : arguments[4];
+
+			if (!msg) {
+				msg = ': ' + msg + '\n';
+			} else {
+				msg = '\n';
+			}
+
+			Utl.log('Error Importer#' + num + msg + ':' + err ? JSON.stringify(err) : '', 'er');
+
+			if (err) {
+				if (rej) {
+					rej(err);
+				}
+				if (thr) {
+					throw err;
+				}
+			}
+		}
+	}, {
 		key: 'styles',
 		value: {
 			'ne': clc.white,
