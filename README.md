@@ -13,11 +13,11 @@
 ### esf-util-1
 | ReqId			| Requirement										| Implementation Methods 				|
 |--- 			|--- 												|--- 					 				|
-| esf-util-1.1	| It should implement logging						| ```log```		 						|
-| esf-util-1.2	| It should simplify error handling inside Promises	| ```promiseReject```		 			|
-| esf-util-1.3	| It should basic path operations					| ```stripSlash```, ```absolutizePath```|
-| esf-util-1.4	| Console messages should be clear					| ```styles```		 					|
-| esf-util-1.5	| It should filter confidential information off logs| ```logFilter```	 					|
+| esf-util-0.1	| It should implement logging						| ```log```		 						|
+| esf-util-0.2	| It should simplify error handling inside Promises	| ```promiseReject```		 			|
+| esf-util-0.3	| It should basic path operations					| ```stripSlash```, ```absolutizePath```|
+| esf-util-0.4	| Console messages should be clear					| ```styles```		 					|
+| esf-util-0.5	| It should filter confidential information off logs| ```logFilter```	 					|
 
 ## API v.1.0
 ```cs
