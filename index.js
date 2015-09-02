@@ -30,22 +30,32 @@ var Utl = (function () {
 			var rej = arguments.length <= 3 || arguments[3] === undefined ? false : arguments[3];
 			var thr = arguments.length <= 4 || arguments[4] === undefined ? false : arguments[4];
 
-			if (!msg) {
+			if (msg) {
 				msg = ': ' + msg + '\n';
 			} else {
 				msg = '\n';
 			}
 
-			Utl.log('Error Importer#' + num + msg + ':' + err ? JSON.stringify(err) : '', 'er');
-
+			var sfx = '';
 			if (err) {
-				if (rej) {
-					rej(err);
-				}
-				if (thr) {
-					throw err;
-				}
+				sfx = JSON.stringify(err) + '\n' + JSON.stringify(err.stack);
 			}
+
+			msg = 'Error ' + __filename + ' #' + num + ' ' + msg + ': ' + sfx;
+
+			Utl.log(msg, 'er');
+
+			err = new Error(msg);
+
+			if (rej) {
+				rej(err);
+			}
+
+			if (thr) {
+				throw err;
+			}
+
+			return err;
 		}
 	}, {
 		key: 'styles',
