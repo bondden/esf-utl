@@ -1,6 +1,6 @@
 {
   "name": "@bond007/esf-utl",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -18,8 +18,7 @@
   "author": "Denis Bondarenko <bond.den@gmail.com>",
   "license": "MIT",
   "homepage": "https://bitbucket.org/bondden/esf-utl#readme",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel": "^5.8.19",
     "chai": "^3.0.0",
@@ -27,6 +26,7 @@
     "es6-module-loader": "^0.16.6",
     "gulp": "^3.9.0",
     "gulp-babel": "^5.1.0",
+    "gulp-bump": "^0.3.1",
     "gulp-changed": "^1.2.1",
     "gulp-mocha": "^2.0.1",
     "gulp-plumber": "^1.0.1",

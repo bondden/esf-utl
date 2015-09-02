@@ -10,7 +10,8 @@ var gulp   =require('gulp'),
     srcmaps=require('gulp-sourcemaps'),
     babel  =require('gulp-babel'),
     mocha  =require('gulp-mocha'),
-		plumber=require('gulp-plumber'),
+    plumber=require('gulp-plumber'),
+    bump   = require('gulp-bump'),
     path   =require('path')
 ;
 var d      ={
@@ -51,6 +52,12 @@ gulp.task('debug',['js'],function(){
 
 gulp.task('watch',function(){
 	gulp.watch(d.js.src,['js']);
+});
+
+gulp.task('bump', function(){
+	gulp.src('./package.json')
+	.pipe(bump({type:'patch'}))
+	.pipe(gulp.dest('./'));
 });
 
 gulp.task('default',['watch','js']);

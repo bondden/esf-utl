@@ -5,15 +5,15 @@
 require('babel/polyfill');
 
 var
-	expect   = require('chai').expect,
-	clc 		 = require('cli-color'),
-	path	 	 = require('path'),
+	assert   = require('chai').expect,
+	clc      = require('cli-color'),
+	path     = require('path'),
 
-	App      =require('../index.js').AppClass
+	App      =require('../index.js').Utl
 ;
 
 var app;
 
-describe('App Suit',function(){
+suit('App Suit',function(){
 	
 });

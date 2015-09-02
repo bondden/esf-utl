@@ -116,12 +116,12 @@ export class Utl {
 	){
 
 		if(!msg){
-			msg=`: ${msg}\n`;
+			msg=': '+msg+'\n';
 		}else{
 			msg='\n';
 		}
 
-		msg=`Error ${__filename} #${num}${msg}:`+(err)?JSON.stringify(err):'';
+		msg='Error '+__filename+' #'+num+''+msg+':'+(err)?JSON.stringify(err):'';
 		Utl.log(msg,'er');
 
 		err=new Error(msg);
