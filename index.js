@@ -38,7 +38,7 @@ var Utl = (function () {
 
 			var sfx = '';
 			if (err) {
-				sfx = JSON.stringify(err) + '\n' + JSON.stringify(err.stack);
+				sfx = JSON.stringify(err, null, '\t') + '\n' + JSON.stringify(err.stack, null, '\t');
 			}
 
 			msg = 'Error ' + __filename + ' #' + num + ' ' + msg + ': ' + sfx;
@@ -135,7 +135,7 @@ var Utl = (function () {
 
 			//set log format
 			if (typeof msg === 'object') {
-				msg = JSON.stringify(msg);
+				msg = JSON.stringify(msg, null, '\t');
 				if (apx) {
 					msg += apx;
 				}
