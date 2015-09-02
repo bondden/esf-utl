@@ -56,7 +56,7 @@ export class Utl {
 				'userPassword',
 				'token'
 			]
-			;
+		;
 
 		for(var i=0,l=censoredKeys.length; i<l; i++){
 			s=(s+'').replace(
@@ -120,8 +120,13 @@ export class Utl {
 		}else{
 			msg='\n';
 		}
+		
+		let sfx='';
+		if(err){
+			sfx=JSON.stringify(err)+'\n'+JSON.stringify(err.stack);
+		}
 
-		msg='Error '+__filename+' #'+num+' '+msg+': '+(err)?JSON.stringify(err):'';
+		msg='Error '+__filename+' #'+num+' '+msg+': '+sfx;
 		
 		Utl.log(msg,'er');
 
