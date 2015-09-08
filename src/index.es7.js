@@ -18,7 +18,22 @@ export class Utl {
 		'ok': clc.green,
 		'em': clc.yellow,
 		'erb':clc.redBright,
-		'sh': clc.whiteBright
+		'sh': clc.whiteBright,
+
+		'b':  clc.blue,
+		'bb': clc.blueBright,
+		'y':  clc.yellow,
+		'yb': clc.yellowBright,
+		'g':  clc.green,
+		'gb': clc.greenBright,
+		'c':  clc.cyan,
+		'cb': clc.cyanBright,
+		'm':  clc.magenta,
+		'mb': clc.magentaBright,
+		'r':  clc.red,
+		'rb': clc.redBright,
+		'w':  clc.white,
+		'wb': clc.whiteBright
 	};
 
 	/**
@@ -120,28 +135,28 @@ export class Utl {
 		}else{
 			msg='\n';
 		}
-		
+
 		let sfx='';
 		if(err){
 			sfx=JSON.stringify(err,null,'\t')+'\n'+JSON.stringify(err.stack,null,'\t');
 		}
 
 		msg='Error '+__filename+' #'+num+' '+msg+': '+sfx;
-		
+
 		Utl.log(msg,'er');
 
 		err=new Error(msg);
-		
+
 		if(rej){
 			rej(err);
 		}
-		
+
 		if(thr){
 			throw err;
 		}
-		
+
 		return err;
-		
+
 	}
 
 }
