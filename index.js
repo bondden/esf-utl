@@ -58,6 +58,19 @@ var Utl = (function () {
 			return err;
 		}
 	}, {
+		key: 'capitalize',
+		value: function capitalize(s) {
+			s = s.toLowerCase();
+			var a = s.split(/[^a-zA-Z0-9]+/g);
+			a = a.map(function (v) {
+				var aa = v.split('');
+				aa[0] = aa[0].toUpperCase();
+				return aa.join('');
+			});
+			s = a.join('');
+			return s;
+		}
+	}, {
 		key: 'styles',
 		value: {
 			'ne': clc.white,
@@ -65,7 +78,22 @@ var Utl = (function () {
 			'ok': clc.green,
 			'em': clc.yellow,
 			'erb': clc.redBright,
-			'sh': clc.whiteBright
+			'sh': clc.whiteBright,
+
+			'b': clc.blue,
+			'bb': clc.blueBright,
+			'y': clc.yellow,
+			'yb': clc.yellowBright,
+			'g': clc.green,
+			'gb': clc.greenBright,
+			'c': clc.cyan,
+			'cb': clc.cyanBright,
+			'm': clc.magenta,
+			'mb': clc.magentaBright,
+			'r': clc.red,
+			'rb': clc.redBright,
+			'w': clc.white,
+			'wb': clc.whiteBright
 		},
 
 		/**

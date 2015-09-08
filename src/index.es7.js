@@ -159,4 +159,16 @@ export class Utl {
 
 	}
 
+	static capitalize(s){
+		s=s.toLowerCase();
+		let a=s.split(/[^a-zA-Z0-9]+/g);
+		a=a.map((v)=>{
+			let aa=v.split('');
+			aa[0]=aa[0].toUpperCase();
+			return aa.join('');
+		});
+		s=a.join('');
+		return s;
+	}
+
 }

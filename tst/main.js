@@ -5,15 +5,22 @@
 require('babel/polyfill');
 
 var
-	assert   = require('chai').expect,
-	clc      = require('cli-color'),
+	assert   = require('chai').assert,
+	cc       = require('cli-color'),
 	path     = require('path'),
 
-	App      =require('../index.js').Utl
+	App      = require('../index.js').Utl
 ;
 
-var app;
+suite('Utl Suit',function(){
 
-suit('App Suit',function(){
-	
+	test('capitalize(s)',function(){
+
+		var sInp='test string_for-TEST yes';
+		var sExp='TestStringForTestYes';
+		var sOut=App.capitalize(sInp);
+		assert.equal(sOut,sExp,' should be '+sExp);
+
+	});
+
 });

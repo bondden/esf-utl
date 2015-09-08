@@ -12,8 +12,14 @@ var gulp   =require('gulp'),
     mocha  =require('gulp-mocha'),
     plumber=require('gulp-plumber'),
     bump   = require('gulp-bump'),
-    path   =require('path')
+    path   =require('path'),
+    cc     =require('cli-color')
 ;
+
+function E(e){
+	console.log(cc.red(JSON.stringify(e,null,'\t')));
+}
+
 var d      ={
 	js  :{
 		src  :'src/*.es7.js',
@@ -21,7 +27,7 @@ var d      ={
 		maps :'.maps/'
 	},
 	tst :{
-		main :'test/main.js'
+		main :'tst/main.js'
 	}
 };
 
@@ -41,9 +47,16 @@ gulp.task('js',function(){
 gulp.task('test',['js'],function(){
 	return gulp.src(d.tst.main,{read:false})
 		.pipe(mocha({
-			reporter :'dot',
-			ui       :'bdd'
-		}));
+			reporter :'spec',
+			ui       :'tdd'
+		}))
+		.once('error',function(e){
+      E(e);
+      process.exit(1);
+    })
+		.once('end',function(){
+      process.exit();
+    });
 });
 
 gulp.task('debug',['js'],function(){
