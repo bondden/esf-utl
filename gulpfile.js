@@ -11,7 +11,7 @@ var gulp   =require('gulp'),
     babel  =require('gulp-babel'),
     mocha  =require('gulp-mocha'),
     plumber=require('gulp-plumber'),
-    bump   = require('gulp-bump'),
+    bump   =require('gulp-bump'),
     path   =require('path'),
     cc     =require('cli-color')
 ;
@@ -27,7 +27,7 @@ var d      ={
 		maps :'.maps/'
 	},
 	tst :{
-		main :'tst/main.js'
+		main :'tst/index.js'
 	}
 };
 

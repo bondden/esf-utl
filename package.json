@@ -1,10 +1,10 @@
 {
   "name": "@bond007/esf-utl",
-  "version": "0.5.8",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "tst/main.js"
+    "test": "tst/index.js"
   },
   "repository": {
     "type": "git",
