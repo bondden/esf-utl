@@ -43,7 +43,7 @@
   },
   "files": [
     "index.js",
-    "gulpfile.js",
+    "gulpfile.babel.js",
     ".eslintrc",
     ".editorconfig",
     ".gitattributes",
