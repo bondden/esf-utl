@@ -54,6 +54,12 @@ export class Utl {
     return pathName.replace(/\/+$/,'');
   };
 
+	/**
+	 * Transforms a path string to absolute relatively __dirname or dirname + additional `rel` path
+	 * @param {String} p - a path string to be transformed
+	 * @param {String} [rel] - additional relative path between the __dirname of context and `p`
+	 * @returns {String} - absolute path
+   */
   static absolutizePath=function(p,rel=''){
     if(!path.isAbsolute(p)){
       p=path.resolve(__dirname+rel+p).replace(/\\/ig,'/');
@@ -61,6 +67,11 @@ export class Utl {
     return p;
   };
 
+	/**
+	 * filters out sensitive information from log, using key names
+	 * @param {String} s
+	 * @returns {*}
+   */
   static logFilter=function(s){
     var
       censorNote  ='FILTERED',

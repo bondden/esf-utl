@@ -2,25 +2,21 @@
  * Created by Denis Bondarenko <bond.den@gmail.com> on 29.06.2015.
  */
 'use strict';
-require('babel/polyfill');
 
 var
-	assert   = require('chai').assert,
-	cc       = require('cli-color'),
-	path     = require('path'),
+  assert=require('chai').assert,
+  App   =require('../index.js').Utl
+  ;
 
-	App      = require('../index.js').Utl
-;
+suite('Utl Suit',()=>{
 
-suite('Utl Suit',function(){
+  test('capitalize(s)',()=>{
 
-	test('capitalize(s)',function(){
+    var sInp='a-test string_for-TEST yes.abc.cde';
+    var sExp='ATestStringForTestYesAbcCde';
+    var sOut=App.capitalize(sInp);
+    assert.equal(sOut,sExp,' should be '+sExp);
 
-		var sInp='a-test string_for-TEST yes.abc.cde';
-		var sExp='ATestStringForTestYesAbcCde';
-		var sOut=App.capitalize(sInp);
-		assert.equal(sOut,sExp,' should be '+sExp);
-
-	});
+  });
 
 });
