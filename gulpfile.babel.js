@@ -78,6 +78,6 @@ gulp.task('bump',()=>{
 
 gulp.task('default',['watch','bld']);
 
-//alises for backward compatibility
+//aliases for backward compatibility
 gulp.task('test',['tst']);
 gulp.task('js',['bld']);
