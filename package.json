@@ -1,6 +1,6 @@
 {
   "name": "esf-utl",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "ESF Utility Module",
   "main": "index.js",
   "scripts": {
@@ -42,11 +42,14 @@
     "mocha-lcov-reporter": "^1.0.0"
   },
   "files": [
-    "index.js",
-    "gulpfile.babel.js",
+    ".babelrc",
     ".eslintrc",
     ".editorconfig",
     ".gitattributes",
+    ".gitignore",
+    ".npmignore",
+    "index.js",
+    "gulpfile.babel.js",
     "lib",
     "src",
     "tst",
