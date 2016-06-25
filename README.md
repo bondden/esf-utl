@@ -1,4 +1,7 @@
 # ESF-Utl
+
+[![Build Status](https://travis-ci.org/bondden/esf-utl.svg?branch=master)](https://travis-ci.org/bondden/esf-utl.svg?branch=master)
+
 ## Road map
 
 Version | Functionality                                                                                                | Status
@@ -28,7 +31,7 @@ esf-utl-2.2 | Add basic tests for all methods                                   
 
 ## API v.2.0
 
-```javascript
+```js
 static object styles
 static string getCurrentDateFmtFFS()                     //current Date-Time formatted like 0000-00-00_00-00-00
 static string stripSlash(string pathName)                //strips ending slash off a path string
