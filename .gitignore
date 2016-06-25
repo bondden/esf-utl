@@ -1,5 +1,8 @@
 syntax: glob
 
+itl-dep.sh
+.maps
+
 .idea/
 nbproject/
 .run

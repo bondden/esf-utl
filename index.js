@@ -15,17 +15,28 @@ var clc = require('cli-color'),
 class Utl {
 
   /**
-   * filters out sensitive information from log, using key names
+   * Universal ESF-projects-wide Promises error handler
+   * @param {number|string} num - error number
+   * @param {string}        msg - custom message
+   * @param {Error}         err - custom error object
+   * @param {function}      rej - Promise reject handler function
+   * @param {boolean}       thr - throw: if true - then let throw the Error, set with above params
+   * @returns {Error}
+    */
+
+
+  /**
+   * Filters out sensitive information from log, using key names
    * @param {String} s
    * @returns {*}
     */
-
   static rejectingError() {
     let num = arguments.length <= 0 || arguments[0] === undefined ? 0 : arguments[0];
-    let msg = arguments.length <= 1 || arguments[1] === undefined ? false : arguments[1];
-    let err = arguments.length <= 2 || arguments[2] === undefined ? false : arguments[2];
-    let rej = arguments.length <= 3 || arguments[3] === undefined ? false : arguments[3];
+    let msg = arguments.length <= 1 || arguments[1] === undefined ? '' : arguments[1];
+    let err = arguments.length <= 2 || arguments[2] === undefined ? null : arguments[2];
+    let rej = arguments.length <= 3 || arguments[3] === undefined ? null : arguments[3];
     let thr = arguments.length <= 4 || arguments[4] === undefined ? false : arguments[4];
+
 
     if (msg) {
       msg = ': ' + msg + '\n';
@@ -56,17 +67,24 @@ class Utl {
   }
 
   /**
+   * Capitalizes the first letter of a string
+   * @param {string} s - a string
+   * @returns {string|*}
+    */
+
+
+  /**
    * Transforms a path string to absolute relatively __dirname or dirname + additional `rel` path
    * @param {String} p - a path string to be transformed
    * @param {String} [rel] - additional relative path between the __dirname of context and `p`
    * @returns {String} - absolute path
     */
 
+
   /**
    * FFS = for file system
    * @return string: current Date-Time formatted like 0000-00-00_00-00-00
    */
-
   static capitalize(s) {
     s = s.toLowerCase();
     let a = s.split(/[^a-zA-Z0-9]+/g);
@@ -143,6 +161,7 @@ Utl.log = function () {
   let msg = arguments.length <= 0 || arguments[0] === undefined ? '\n' : arguments[0];
   let style = arguments.length <= 1 || arguments[1] === undefined ? 'ne' : arguments[1];
   let silent = arguments.length <= 2 || arguments[2] === undefined ? false : arguments[2];
+
 
   //todo: transfer settings to log for a) defining a log file, b) setting logging on/off
   //todo: clearLog method

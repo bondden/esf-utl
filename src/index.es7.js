@@ -68,7 +68,7 @@ export class Utl {
   };
 
 	/**
-	 * filters out sensitive information from log, using key names
+	 * Filters out sensitive information from log, using key names
 	 * @param {String} s
 	 * @returns {*}
    */
@@ -134,11 +134,20 @@ export class Utl {
 
   };
 
+	/**
+	 * Universal ESF-projects-wide Promises error handler
+	 * @param {number|string} num - error number
+	 * @param {string}        msg - custom message
+	 * @param {Error}         err - custom error object
+	 * @param {function}      rej - Promise reject handler function
+	 * @param {boolean}       thr - throw: if true - then let throw the Error, set with above params
+	 * @returns {Error}
+   */
   static rejectingError(
     num = 0,
-    msg = false,
-    err = false,
-    rej = false,
+    msg = '',
+    err = null,
+    rej = null,
     thr = false
   ){
 
@@ -171,6 +180,11 @@ export class Utl {
 
   }
 
+	/**
+	 * Capitalizes the first letter of a string
+	 * @param {string} s - a string
+	 * @returns {string|*}
+   */
   static capitalize(s){
     s=s.toLowerCase();
     let a=s.split(/[^a-zA-Z0-9]+/g);
