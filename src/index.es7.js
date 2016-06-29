@@ -7,7 +7,8 @@ var
   clc =require('cli-color'),
   fs  =require('fs'),
   path=require('path'),
-  os  =require('os')
+  os  =require('os'),
+  cirJsn    =require('circular-json')
 ;
 
 export class Utl {
@@ -199,38 +200,12 @@ export class Utl {
 
 	/**
 	 * Stringifies an object, stripping off circular structures
+	 * Wrapper over circular-json with preset ESF formatting style
 	 * @param {object|*} o
 	 * @returns {string}
    */
 	static stringifyJSON(o){
-
-		/**
-		 * Converts circular structure to JSON
-		 * according to http://stackoverflow.com/a/9653082/3688689
-		 * @param c
-		 * @returns {Function}
-		 */
-		function censor(c){
-			var i=0;
-
-			return function(k,v){
-				if( i!==0 && typeof(c)==='object' && typeof(v)=='object' && c==v ){
-					return '[Circular]';
-				}
-
-				if(i>=29){
-					return '[Unknown]';
-				}
-
-				++i;
-
-				return v;
-			}
-
-		}
-
-		return JSON.stringify(o,censor(o),'  ');
-
+		return cirJsn.stringify(o,null,'  ','[Circular]');
 	}
 
 }
