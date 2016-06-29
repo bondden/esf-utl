@@ -1,6 +1,6 @@
 {
   "name": "esf-utl",
-  "version": "2.1.5",
+  "version": "2.2.0",
   "description": "ESF Utility Module",
   "main": "index.js",
   "scripts": {

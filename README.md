@@ -11,12 +11,13 @@ Version | Functionality                                                         
 1.0.0   | Promises error handling [esf-utl-0.2](esf-utl-0.2)                                                           | released
 2.0.0   | Implement API v.2.0, reqs [esf-utl-0.2](esf-utl-0.2)                                                         | released
 2.1.0   | Implement actual ESF-spec (v.2.5), update to `babel` v.6 , reqs [esf-utl-0.2.1](esf-utl-0.2.1)               | released
+2.2.0   | Implement API v.2.2, reqs [esf-utl-3.0](esf-utl-3.0)                                                         | released
 
 ## Requirements
 ### esf-utl-1
 
 ReqId       | Requirement                                                                                        | Implementation Methods
------------ | -------------------------------------------------------------------------------------------------- | -------------------------------------------
+----------- | -------------------------------------------------------------------------------------------------- | ----------------------------------------
 esf-utl-0.1 | It should implement logging                                                                        | `log`
 esf-utl-0.2 | It should simplify error handling inside Promises                                                  | `promiseReject` (depr. since API v.2.0)
 esf-utl-0.3 | It should basic path operations                                                                    | `stripSlash`, `absolutizePath`
@@ -28,8 +29,9 @@ esf-utl-1.1 | It should handle Errors with options: set number, custom message, 
 esf-utl-2.0 | Implement API v.2.0                                                                                | _
 esf-utl-2.1 | Implement actual ESF-spec (v.2.5), update to `babel` v.6                                           | _
 esf-utl-2.2 | Add basic tests for all methods                                                                    | _
+esf-utl-3.0 | It should have a method to stringify JSON with circular structures                                 | `stringifyJSON`
 
-## API v.2.0
+## API v.2.2
 
 ```js
 static object styles
@@ -46,6 +48,7 @@ static Error  rejectingError(                            //
   boolean  thr                                           //throw setter. If true the Error err should be thrown, else - just returned
 )
 static string capitalize(string s)                       //
+static string stringifyJSON(object s)                    //Stringifies an object, stripping off circular structures
 ```
 
 --------------------------------------------------------------------------------
