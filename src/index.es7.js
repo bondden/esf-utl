@@ -58,6 +58,15 @@ export class Utl{
   }
 
   /**
+   * Returns current date, formatted for log()
+   * @return {string} - formatted date
+   */
+  static getCurrentDateFmtLog(){
+    let d=new Date();
+    return d.toISOString().replace(/[a-z]+|\..+$/ig,' ');
+  }
+
+  /**
    * Strips all contiguous slashes off the input end
    * @param {string} pathName    - string path
    * @return {XML|string|void|*} - input string without ending slashes 
@@ -140,9 +149,8 @@ export class Utl{
     }
 
     msg=Utl.logFilter(msg);
-
-    let d     =new Date();
-    let msgFmt=`${d.toUTCString()}:  ${msg}`;
+    
+    let msgFmt=`${Utl.getCurrentDateFmtLog()}:  ${msg}`;
 
     fs.appendFile(
       Utl.logFile,
