@@ -9,6 +9,58 @@ const
   ;
 
 suite('Utl Suit',()=>{
+  
+  test('stripSlash(s)',()=>{
+    
+    const d=[
+      {
+        i:'hello/folder',
+        e:'hello/folder'
+      },
+      {
+        i:'hello/folder/',
+        e:'hello/folder'
+      },
+      {
+        i:'hello/folder//',
+        e:'hello/folder'
+      },
+      {
+        i:'hello/folder////',
+        e:'hello/folder'
+      }
+    ];
+    
+    d.forEach(v=>{
+      let o=App.stripSlash(v.i);
+      assert.equal(o,v.e);
+    });
+    
+  });
+  
+  test('logFilter(s)',()=>{
+
+    const d=[
+      {
+        i:`"password":"hello"`,
+        e:`"password":"FILTERED"`
+      },
+      {
+        i:`"password": "hello"`,
+        e:`"password":"FILTERED"`
+      },
+      {
+        i:`"password" :  "hello"`,
+        e:`"password":"FILTERED"`
+      }
+    ];
+
+    d.forEach(v=>{
+      let o=App.logFilter(v.i);
+      assert.equal(o,v.e);
+    });
+    
+  });
 
   test('capitalize(s)',()=>{
 

@@ -1,6 +1,6 @@
 {
 	"parserOptions": {
-		"ecmaVersion": 6,
+		"ecmaVersion": 7,
 		"sourceType": "module",
 		"ecmaFeatures": {
 			"modules": true
@@ -14,40 +14,50 @@
 	"extends":"eslint:recommended",
 	"rules":{
 		"strict": [
-			1,
+			"warn",
 			"global"
 		],
 		"indent":[
-			1,
+			"warn",
 			2
 		],
 		"quotes":[
-			0,
+			"off",
 			"double"
 		],
 		"no-spaced-func": 1,
 		"space-before-blocks": [
-			1, "never"
+			"warn",
+			"never"
 		],
 		"linebreak-style":[
-			2,
+			"error",
 			"unix"
 		],
 		"semi":[
-			2,
+			"error",
 			"always"
 		],
-		"eqeqeq": 1,
-		"no-undef":1,
-		"no-sync": 2,
-		"no-unneeded-ternary": 1,
-		"no-unreachable": 1,
-		"no-unused-expressions": 1,
-		"no-unused-vars": [1, {"vars": "all", "args": "after-used"}],
-		"prefer-arrow-callback": 1,
-		"quote-props": [1, "consistent-as-needed"],
-		"valid-jsdoc": 2,
-		"valid-typeof": 2,
-		"no-console":1
+		"eqeqeq": "warn",
+		"no-undef":"warn",
+		"no-sync": "error",
+		"no-unneeded-ternary": "warn",
+		"no-unreachable": "warn",
+		"no-unused-expressions": "warn",
+		"no-unused-vars": [
+			"warn",
+			{
+				"vars": "all",
+				"args": "after-used"
+			}
+		],
+		"prefer-arrow-callback": "warn",
+		"quote-props": [
+			"warn",
+			"consistent-as-needed"
+		],
+		"valid-jsdoc": "error",
+		"valid-typeof": "error",
+		"no-console":"warn"
 	}
 }
