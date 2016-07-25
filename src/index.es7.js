@@ -242,4 +242,48 @@ export class Utl{
     return cirJsn.stringify(o,null,'  ','[Circular]');
   }
 
+  /**
+   * Alias of rejectingError
+   * @param {number|string} num - error number
+   * @param {string}        msg - custom message
+   * @param {Error}         err - custom error object
+   * @param {function}      rej - Promise reject handler function
+   * @param {boolean}       thr - throw: if true - then let throw the Error, set with above params
+   * @returns {Error}           - error object
+   */
+  static e(
+    num=0,
+    msg='',
+    err=null,
+    rej=null,
+    thr=false
+  ){
+    return Utl.rejectingError(
+      num,
+      msg,
+      err,
+      rej,
+      thr
+    );
+  }
+
+  /**
+   * ALias of log
+   * @param {string|any}  msg     - message
+   * @param {string}      style   - style, one of Utl.styles
+   * @param {boolean}     silent  - if true, don't output to stdout
+   * @return {void}
+   */
+  static l(
+    msg='\n',
+    style='ne',
+    silent=false
+  ){
+    return Utl.log(
+      msg,
+      style,
+      silent
+    );
+  }
+
 }

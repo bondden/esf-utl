@@ -13,6 +13,7 @@
 | 2.1.0   | Implement actual ESF-spec (v.2.5), update to `babel` v.6 , reqs [esf-utl-2.1](esf-utl-2.1)         | released |
 | 2.2.0   | Implement API v.2.2, reqs [esf-utl-3.0](esf-utl-3.0)                                               | released |
 | 3.0.0   | Implement API v.3.0, reqs [esf-utl-4.0](esf-utl-4.0)                                               | released |
+| 3.2.0   | Implement aliases `e`, `l`: req [esf-utl-5.0](esf-utl-5.0)                                         | released |
 
 ## Requirements
 ### esf-utl-1
@@ -31,7 +32,8 @@ esf-utl-2.0 | Implement API v.2.0                                               
 esf-utl-2.1 | Implement actual ESF-spec (v.2.5), update to `babel` v.6                                           | _
 esf-utl-2.2 | Add basic tests for all methods                                                                    | _
 esf-utl-3.0 | It should have a method to stringify JSON with circular structures                                 | `stringifyJSON`
-esf-utl-4.0 | It should clearly show log file name, log string should be shorter                                 | 
+esf-utl-4.0 | It should clearly show log file name, log string should be shorter                                 |
+esf-utl-5.0 | It should present short aliases for `log()` and `rejectingError` methods                           | `l`, `e`
 
 ## API v.3.0
 
@@ -52,6 +54,8 @@ static Error  rejectingError(                            //
 )
 static string capitalize(string s)                       // 
 static string stringifyJSON(object s)                    // Stringifies an object, stripping off circular structures
+static void   l                                          // alias of log
+static Error  e                                          // alias of rejectingError
 ```
 
 --------------------------------------------------------------------------------
