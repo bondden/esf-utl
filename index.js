@@ -228,6 +228,40 @@ class Utl {
     return cirJsn.stringify(o, null, '  ', '[Circular]');
   }
 
+  /**
+   * Alias of rejectingError
+   * @param {number|string} num - error number
+   * @param {string}        msg - custom message
+   * @param {Error}         err - custom error object
+   * @param {function}      rej - Promise reject handler function
+   * @param {boolean}       thr - throw: if true - then let throw the Error, set with above params
+   * @returns {Error}           - error object
+   */
+  static e() {
+    let num = arguments.length <= 0 || arguments[0] === undefined ? 0 : arguments[0];
+    let msg = arguments.length <= 1 || arguments[1] === undefined ? '' : arguments[1];
+    let err = arguments.length <= 2 || arguments[2] === undefined ? null : arguments[2];
+    let rej = arguments.length <= 3 || arguments[3] === undefined ? null : arguments[3];
+    let thr = arguments.length <= 4 || arguments[4] === undefined ? false : arguments[4];
+
+    return Utl.rejectingError(num, msg, err, rej, thr);
+  }
+
+  /**
+   * ALias of log
+   * @param {string|any}  msg     - message
+   * @param {string}      style   - style, one of Utl.styles
+   * @param {boolean}     silent  - if true, don't output to stdout
+   * @return {void}
+   */
+  static l() {
+    let msg = arguments.length <= 0 || arguments[0] === undefined ? '\n' : arguments[0];
+    let style = arguments.length <= 1 || arguments[1] === undefined ? 'ne' : arguments[1];
+    let silent = arguments.length <= 2 || arguments[2] === undefined ? false : arguments[2];
+
+    return Utl.log(msg, style, silent);
+  }
+
 }
 exports.Utl = Utl;
 //# sourceMappingURL=.maps/index.es7.js.map
